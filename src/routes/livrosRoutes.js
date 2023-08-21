@@ -40,15 +40,6 @@ router.get("/livros", LivroController.listarLivros);
  *     responses:
  *       200:
  *         description: Lista de livros da editora.
- *         content:
- *           application/json:
- *             example:
- *               - id: 1
- *                 titulo: Livro A
- *                 editora: Editora X
- *               - id: 2
- *                 titulo: Livro B
- *                 editora: Editora X
  *       400:
  *         description: Parâmetros inválidos ou ausentes na solicitação.
  *       500:
