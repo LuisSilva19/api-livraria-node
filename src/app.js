@@ -1,7 +1,7 @@
 import express from "express";
 import db from "./config/dbConnect.js";
 import routes from "./routes/index.js";
-import log  from './config/logger.js';
+import log from './config/logger.js';
 import setupSwagger from './config/swagger.js';
 import cors from "cors"
 
