@@ -1,19 +1,3 @@
-// import express from "express";
-// import LivroController from "../controllers/livrosController.js";
-
-// const router = express.Router();
-
-// router
-//   .get("/livros", LivroController.listarLivros);
-
-// router.get("/livros/busca", LivroController.listarLivroPorEditora)
-//   .get("/livros/:id", LivroController.listarLivroPorId)
-//   .post("/livros", LivroController.cadastrarLivro)
-//   .put("/livros/:id", LivroController.atualizarLivro)
-//   .delete("/livros/:id", LivroController.excluirLivro)
-
-// export default router;   
-
 import express from "express";
 import LivroController from "../controllers/livrosController.js";
 
@@ -46,9 +30,29 @@ router.get("/livros", LivroController.listarLivros);
  *     summary: Listar livros por editora
  *     description: Retorna uma lista de livros de uma editora específica.
  *     tags: [Livros]
+ *     parameters:
+ *       - in: query
+ *         name: editora
+ *         required: true
+ *         description: Nome da editora para filtrar os livros.
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
  *         description: Lista de livros da editora.
+ *         content:
+ *           application/json:
+ *             example:
+ *               - id: 1
+ *                 titulo: Livro A
+ *                 editora: Editora X
+ *               - id: 2
+ *                 titulo: Livro B
+ *                 editora: Editora X
+ *       400:
+ *         description: Parâmetros inválidos ou ausentes na solicitação.
+ *       500:
+ *         description: Erro interno do servidor.
  */
 router.get("/livros/busca", LivroController.listarLivroPorEditora);
 
